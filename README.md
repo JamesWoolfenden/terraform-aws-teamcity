@@ -3,7 +3,7 @@
 
 # terraform-aws-teamcity [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-teamcity.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-teamcity) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-teamcity.svg)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
 
-This module is to create a VPC, Sub-nets and routes for your standard AWS VPC pattern. It also implements the common-tag scheme and calculates the breakdown of your CIDR.
+This module is to create a Teamcity CICD server in ec2.
 
 ---
 
