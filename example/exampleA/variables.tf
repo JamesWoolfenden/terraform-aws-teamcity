@@ -1,19 +1,19 @@
 variable "instance_type" {
-    type=string
+  type = string
 }
 
 variable "ssl_cert_arn" {
-    type=string
+  type = string
 }
 
 variable "vpc_id" {
-    type=string
+  type = string
 }
 
 variable "key_name" {
-    type=string
+  type = string
 }
 
 variable "common_tags" {
-  type=map
+  type = map
 }

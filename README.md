@@ -30,10 +30,32 @@ common_tags={
     Environment=           "Management"
 }
 ```
-
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| ami\_id |  | string | n/a | yes |
+| common\_tags | Implements the common_tags scheme | map | n/a | yes |
+| instance\_type |  | string | n/a | yes |
+| key\_name | description | string | n/a | yes |
+| ssl\_cert\_arn |  | string | n/a | yes |
+| vpc\_id |  | string | n/a | yes |
+
 ## Outputs
+
+| Name | Description |
+|------|-------------|
+| artifact-bucket |  |
+| dbpassword |  |
+| loadbalancer |  |
+| password |  |
+| private\_ip |  |
+| public\_ip |  |
+| teamcity\_db\_endpoint |  |
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Instructions
 
 ## Related Projects
 
@@ -82,7 +104,7 @@ under the License.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
+  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
   [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
   [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150

@@ -25,4 +25,3 @@ docs:
 valid:
 	tflint
 	terraform fmt -check=true -diff=true
-

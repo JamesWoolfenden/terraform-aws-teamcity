@@ -3,7 +3,7 @@ resource "aws_instance" "teamcity" {
   availability_zone = data.aws_availability_zones.available.names[0]
   instance_type     = var.instance_type
   key_name          = aws_key_pair.teamcity.key_name
-  subnet_id         = element(data.aws_subnet_ids.private,0)
+  subnet_id         = element(data.aws_subnet_ids.private, 0)
 
   user_data = <<EOF
 <powershell>
