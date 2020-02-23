@@ -3,19 +3,16 @@ resource "aws_elb" "service_elb" {
   security_groups = [aws_security_group.elb.id]
   instances       = [aws_instance.teamcity.id]
 
-  listener {
-    instance_port     = 80
-    instance_protocol = "http"
-    lb_port           = 80
-    lb_protocol       = "http"
-  }
+  dynamic "listener" {
+    for_each = var.listeners
 
-  listener {
-    instance_port      = 80
-    instance_protocol  = "http"
-    lb_port            = 443
-    lb_protocol        = "https"
-    ssl_certificate_id = var.ssl_cert_arn
+    content {
+      instance_port      = listener.value["instance_port"]
+      instance_protocol  = listener.value["instance_protocol"]
+      lb_port            = listener.value["lb_port"]
+      lb_protocol        = listener.value["lb_protocol"]
+      ssl_certificate_id = listener.value["ssl_certificate_id"]
+    }
   }
 
   health_check {

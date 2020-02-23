@@ -1,19 +1,13 @@
 
 variable "ami_id" {
   type        = string
-  description = ""
+  description = "Which image to use"
 }
 
 variable "instance_type" {
   type        = string
-  description = ""
+  description = "THe instance type"
 }
-
-variable "ssl_cert_arn" {
-  type    = string
-  default = ""
-}
-
 
 variable "key_name" {
   type        = string
@@ -29,7 +23,6 @@ variable "common_tags" {
   type        = map
   description = "Implements the common_tags scheme"
 }
-
 
 variable "whitelist" {
   description = "The CIDRs that can have access to the instance"
@@ -52,4 +45,14 @@ variable "need_db" {
 
 variable "elb-whitelist" {
   default = ["0.0.0.0/0"]
+}
+
+variable "listeners" {
+  type = list(object({ instance_port = number,
+    instance_protocol  = string,
+    lb_port            = number,
+    lb_protocol        = string,
+    ssl_certificate_id = string
+  }))
+  description = "Details for SSL redirect"
 }

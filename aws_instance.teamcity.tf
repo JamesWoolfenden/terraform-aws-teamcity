@@ -1,6 +1,5 @@
 resource "aws_instance" "teamcity" {
-  ami = var.ami_id
-  #availability_zone = data.aws_availability_zones.available.names[0]
+  ami           = var.ami_id
   instance_type = var.instance_type
   key_name      = aws_key_pair.teamcity.key_name
   subnet_id     = element(var.private_subnets, 0)

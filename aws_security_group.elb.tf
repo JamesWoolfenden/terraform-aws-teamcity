@@ -1,6 +1,6 @@
 resource "aws_security_group" "elb" {
-  vpc_id = var.vpc_id
-  description= "Protects ELB access"
+  vpc_id      = var.vpc_id
+  description = "Protects ELB access"
 
   ingress {
     from_port   = 80
@@ -28,5 +28,3 @@ resource "aws_security_group" "elb" {
 
   tags = var.common_tags
 }
-
-

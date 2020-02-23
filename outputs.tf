@@ -1,4 +1,4 @@
-output "teamcity" {
+output "server" {
   value = aws_instance.teamcity
 }
 

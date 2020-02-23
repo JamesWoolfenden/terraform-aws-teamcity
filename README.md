@@ -49,15 +49,15 @@ common_tags={
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
-| ami\_id | n/a | `string` | n/a | yes |
+| ami\_id | Which image to use | `string` | n/a | yes |
 | common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
 | elb-whitelist | n/a | `list` | <pre>[<br>  "0.0.0.0/0"<br>]<br></pre> | no |
-| instance\_type | n/a | `string` | n/a | yes |
+| instance\_type | THe instance type | `string` | n/a | yes |
 | key\_name | description | `string` | n/a | yes |
+| listeners | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))<br></pre> | n/a | yes |
 | need\_db | Only create db when set | `number` | `0` | no |
 | private\_subnets | n/a | `list` | n/a | yes |
 | public\_subnets | n/a | `list` | n/a | yes |
-| ssl\_cert\_arn | n/a | `string` | `""` | no |
 | vpc\_id | n/a | `string` | n/a | yes |
 | whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]<br></pre> | no |
 
@@ -67,11 +67,10 @@ common_tags={
 |------|-------------|
 | artifact-bucket | n/a |
 | dbpassword | n/a |
-| loadbalancer | n/a |
+| elb | n/a |
 | password | n/a |
-| private\_ip | n/a |
-| public\_ip | n/a |
-| teamcity\_db\_endpoint | n/a |
+| server | n/a |
+| teamcity\_db | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Instructions
