@@ -1,7 +1,12 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-# terraform-aws-teamcity [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-teamcity.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-teamcity) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-teamcity.svg)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
+# terraform-aws-teamcity
+
+[![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-teamcity.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-teamcity)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-teamcity.svg)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 This module is to create a Teamcity CICD server in ec2.
 
@@ -30,29 +35,43 @@ common_tags={
     Environment=           "Management"
 }
 ```
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+| local | n/a |
+| random | n/a |
+| tls | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| ami\_id |  | string | n/a | yes |
-| common\_tags | Implements the common_tags scheme | map | n/a | yes |
-| instance\_type |  | string | n/a | yes |
-| key\_name | description | string | n/a | yes |
-| ssl\_cert\_arn |  | string | n/a | yes |
-| vpc\_id |  | string | n/a | yes |
+|------|-------------|------|---------|:-----:|
+| ami\_id | n/a | `string` | n/a | yes |
+| common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
+| elb-whitelist | n/a | `list` | <pre>[<br>  "0.0.0.0/0"<br>]<br></pre> | no |
+| instance\_type | n/a | `string` | n/a | yes |
+| key\_name | description | `string` | n/a | yes |
+| need\_db | Only create db when set | `number` | `0` | no |
+| private\_subnets | n/a | `list` | n/a | yes |
+| public\_subnets | n/a | `list` | n/a | yes |
+| ssl\_cert\_arn | n/a | `string` | `""` | no |
+| vpc\_id | n/a | `string` | n/a | yes |
+| whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]<br></pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| artifact-bucket |  |
-| dbpassword |  |
-| loadbalancer |  |
-| password |  |
-| private\_ip |  |
-| public\_ip |  |
-| teamcity\_db\_endpoint |  |
+| artifact-bucket | n/a |
+| dbpassword | n/a |
+| loadbalancer | n/a |
+| password | n/a |
+| private\_ip | n/a |
+| public\_ip | n/a |
+| teamcity\_db\_endpoint | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Instructions
@@ -77,7 +96,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 
 ## License
 
@@ -104,11 +123,10 @@ under the License.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
-  [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-  [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
+[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
+[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden

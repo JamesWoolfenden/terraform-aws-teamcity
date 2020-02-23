@@ -6,35 +6,41 @@ resource "aws_security_group" "teamcity" {
     from_port   = 3389
     to_port     = 3389
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    description = "RDP"
+    cidr_blocks = var.whitelist
   }
 
   ingress {
     from_port   = 9090
     to_port     = 9090
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    description = "Agent port"
+    cidr_blocks = var.whitelist
   }
 
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
+    description     = "ui"
+    security_groups = [aws_security_group.elb.id]
+    cidr_blocks     = var.whitelist
   }
 
   ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    description = "SSH"
+    cidr_blocks = var.whitelist
   }
 
   ingress {
-    from_port = 0
-    to_port   = 65535
-    protocol  = "tcp"
-    self      = true
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "tcp"
+    description = "Allows traffic to those under group"
+    self        = true
   }
 
   egress {

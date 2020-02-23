@@ -1,12 +1,14 @@
-resource "aws_security_group" "rds_security_group" {
-  description = "Allow all inbound traffic"
+resource "aws_security_group" "rds" {
+  count                  = var.need_db
+  description = "Allow inbound traffic from Teamcity server"
   vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 3306
     to_port     = 3306
     protocol    = "TCP"
-    cidr_blocks = ["0.0.0.0/0"]
+    security_groups=[aws_security_group.teamcity.id]
+    description = "Only let the TC server connect"
   }
 
   egress {
@@ -20,6 +22,7 @@ resource "aws_security_group" "rds_security_group" {
 }
 
 resource "aws_db_subnet_group" "teamcity" {
-  subnet_ids = data.aws_subnet_ids.private
+  count                  = var.need_db
+  subnet_ids = var.private_subnets
   tags       = var.common_tags
 }

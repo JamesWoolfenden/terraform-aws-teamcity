@@ -1,6 +1,6 @@
 resource "aws_elb" "service_elb" {
-  subnets         = data.aws_subnet_ids.public
-  security_groups = [aws_security_group.elb-sg.id]
+  subnets         = var.public_subnets
+  security_groups = [aws_security_group.elb.id]
   instances       = [aws_instance.teamcity.id]
 
   listener {
@@ -9,8 +9,6 @@ resource "aws_elb" "service_elb" {
     lb_port           = 80
     lb_protocol       = "http"
   }
-
-  internal = true
 
   listener {
     instance_port      = 80
