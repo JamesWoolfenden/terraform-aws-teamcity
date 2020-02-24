@@ -56,3 +56,8 @@ variable "listeners" {
   }))
   description = "Details for SSL redirect"
 }
+
+variable "associate_public_ip_address" {
+  type    = string
+  default = false
+}

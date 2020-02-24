@@ -35,7 +35,7 @@ common_tags={
     Environment=           "Management"
 }
 ```
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Providers
 
 | Name | Version |
@@ -50,6 +50,7 @@ common_tags={
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
 | ami\_id | Which image to use | `string` | n/a | yes |
+| associate\_public\_ip\_address | n/a | `string` | `false` | no |
 | common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
 | elb-whitelist | n/a | `list` | <pre>[<br>  "0.0.0.0/0"<br>]<br></pre> | no |
 | instance\_type | THe instance type | `string` | n/a | yes |

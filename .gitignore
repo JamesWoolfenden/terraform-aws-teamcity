@@ -12,3 +12,4 @@ lambda
 *~HEAD
 *backup
 id_rsa*
+*.lock.info
