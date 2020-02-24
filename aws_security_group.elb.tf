@@ -1,4 +1,5 @@
 resource "aws_security_group" "elb" {
+  name        = "teamcity-elb"
   vpc_id      = var.vpc_id
   description = "Protects ELB access"
 

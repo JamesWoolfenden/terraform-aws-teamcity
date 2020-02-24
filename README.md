@@ -35,7 +35,7 @@ common_tags={
     Environment=           "Management"
 }
 ```
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Providers
 
 | Name | Version |

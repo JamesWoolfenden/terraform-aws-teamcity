@@ -1,14 +1,8 @@
 resource "aws_security_group" "teamcity" {
+  name        = "teamcity instance"
   description = "Terraform security group"
   vpc_id      = var.vpc_id
 
-  ingress {
-    from_port   = 3389
-    to_port     = 3389
-    protocol    = "tcp"
-    description = "RDP"
-    cidr_blocks = var.whitelist
-  }
 
   ingress {
     from_port   = 9090
@@ -19,8 +13,8 @@ resource "aws_security_group" "teamcity" {
   }
 
   ingress {
-    from_port       = 80
-    to_port         = 80
+    from_port       = 8111
+    to_port         = 8111
     protocol        = "tcp"
     description     = "ui"
     security_groups = [aws_security_group.elb.id]

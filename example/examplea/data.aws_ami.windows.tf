@@ -1,10 +1,10 @@
-data "aws_ami" "windows" {
+data "aws_ami" "amazon" {
   most_recent = true
   owners      = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["Windows_Server-2019-English-Full-Base*"]
+    values = ["amzn2-ami-hvm-*-x86_64-ebs*"]
   }
 
   filter {
