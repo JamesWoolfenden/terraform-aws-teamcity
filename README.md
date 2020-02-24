@@ -8,7 +8,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
-This module is to create a Teamcity CICD server in ec2.
+This module is to create a Teamcity CICD server on EC2.
 
 ---
 
@@ -22,7 +22,23 @@ Include this repository as a module in your existing terraform code:
 module "teamcity" {
   source       = "JamesWoolfenden/teamcity/aws"
   version      = "0.1.21"
-  common_tags  = var.common_tags
+  ami_id                      = data.aws_ami.amazon.id
+  associate_public_ip_address = false
+  common_tags                 = var.common_tags
+  instance_type               = var.instance_type
+  key_name                    = var.key_name
+  private_subnets             = data.aws_subnet_ids.private.ids
+  public_subnets              = data.aws_subnet_ids.public.ids
+  vpc_id                      = var.vpc_id
+  listeners = [
+    {
+      instance_port      = 8111
+      instance_protocol  = "http"
+      lb_port            = 80
+      lb_protocol        = "http"
+      ssl_certificate_id = ""
+    }
+  ]
 }
 ```
 
@@ -35,7 +51,7 @@ common_tags={
     Environment=           "Management"
 }
 ```
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Providers
 
 | Name | Version |
