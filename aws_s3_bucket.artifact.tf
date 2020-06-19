@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "artifact" {
   #checkov:skip=CKV_AWS_18:Ensure the S3 bucket has access logging enabled
-
+  #checkov:skip=CKV_AWS_52: "Ensure S3 bucket has MFA delete enabled"
   bucket = "artifact-teamcity-${data.aws_caller_identity.current.account_id}"
   acl    = "private"
 

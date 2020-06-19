@@ -68,15 +68,15 @@ common_tags={
 | ami\_id | Which image to use | `string` | n/a | yes |
 | associate\_public\_ip\_address | n/a | `string` | `false` | no |
 | common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
-| elb-whitelist | n/a | `list` | <pre>[<br>  "0.0.0.0/0"<br>]<br></pre> | no |
+| elb-whitelist | n/a | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 | instance\_type | THe instance type | `string` | n/a | yes |
 | key\_name | description | `string` | n/a | yes |
-| listeners | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))<br></pre> | n/a | yes |
+| listeners | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))</pre> | n/a | yes |
 | need\_db | Only create db when set | `number` | `0` | no |
 | private\_subnets | n/a | `list` | n/a | yes |
 | public\_subnets | n/a | `list` | n/a | yes |
 | vpc\_id | n/a | `string` | n/a | yes |
-| whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]<br></pre> | no |
+| whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 
 ## Outputs
 
@@ -146,8 +146,8 @@ under the License.
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/company/slalom-consulting/
-[twitter]: https://twitter.com/Slalom
+[linkedin]: https://www.linkedin.com/in/JamesWoolfenden
+[twitter]: https://twitter.com/JimWoolfenden
 
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-teamcity&url=https://github.com/jameswoolfenden/terraform-aws-teamcity
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-teamcity&url=https://github.com/jameswoolfenden/terraform-aws-teamcity
