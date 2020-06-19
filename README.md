@@ -8,7 +8,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
-This module is to create a Teamcity CICD server on EC2.
+This module is to create a Teamcity CICD server on EC2. Its is fully automatic it install Teamcity as part of the userdata payload.
 
 ---
 
@@ -20,8 +20,8 @@ Include this repository as a module in your existing terraform code:
 
 ```hcl
 module "teamcity" {
-  source       = "JamesWoolfenden/teamcity/aws"
-  version      = "0.1.21"
+  source                      = "JamesWoolfenden/teamcity/aws"
+  version                     = "0.1.21"
   ami_id                      = data.aws_ami.amazon.id
   associate_public_ip_address = false
   common_tags                 = var.common_tags
