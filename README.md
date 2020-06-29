@@ -52,6 +52,10 @@ common_tags={
 }
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
 ## Providers
 
 | Name | Version |
@@ -64,7 +68,7 @@ common_tags={
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | ami\_id | Which image to use | `string` | n/a | yes |
 | associate\_public\_ip\_address | n/a | `string` | `false` | no |
 | common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
