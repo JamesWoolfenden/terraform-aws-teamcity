@@ -2,10 +2,6 @@ variable "instance_type" {
   type = string
 }
 
-variable "ssl_cert_arn" {
-  type = string
-}
-
 variable "vpc_id" {
   type = string
 }

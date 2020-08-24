@@ -6,7 +6,7 @@
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-teamcity/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-teamcity)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-teamcity.svg)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 This module is to create a Teamcity CICD server on EC2. Its is fully automatic it install Teamcity as part of the userdata payload.
 
@@ -70,16 +70,16 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | ami\_id | Which image to use | `string` | n/a | yes |
-| associate\_public\_ip\_address | n/a | `string` | `false` | no |
+| associate\_public\_ip\_address | n/a | `bool` | `false` | no |
 | common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
-| elb-whitelist | n/a | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| elb-whitelist | The allow list | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 | instance\_type | THe instance type | `string` | n/a | yes |
 | key\_name | description | `string` | n/a | yes |
 | listeners | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))</pre> | n/a | yes |
 | need\_db | Only create db when set | `number` | `0` | no |
 | private\_subnets | n/a | `list` | n/a | yes |
 | public\_subnets | n/a | `list` | n/a | yes |
-| vpc\_id | n/a | `string` | n/a | yes |
+| vpc\_id | The id for the vpc | `string` | n/a | yes |
 | whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 
 ## Outputs
