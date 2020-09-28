@@ -1,6 +1,3 @@
-
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-aws-teamcity
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-teamcity/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-teamcity)
@@ -51,49 +48,52 @@ common_tags={
     Environment=           "Management"
 }
 ```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| aws | n/a |
-| local | n/a |
-| random | n/a |
-| tls | n/a |
+| Name   | Version |
+| ------ | ------- |
+| aws    | n/a     |
+| local  | n/a     |
+| random | n/a     |
+| tls    | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| ami\_id | Which image to use | `string` | n/a | yes |
-| associate\_public\_ip\_address | n/a | `bool` | `false` | no |
-| common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
-| elb-whitelist | The allow list | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
-| instance\_type | THe instance type | `string` | n/a | yes |
-| key\_name | description | `string` | n/a | yes |
-| listeners | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))</pre> | n/a | yes |
-| need\_db | Only create db when set | `number` | `0` | no |
-| private\_subnets | n/a | `list` | n/a | yes |
-| public\_subnets | n/a | `list` | n/a | yes |
-| vpc\_id | The id for the vpc | `string` | n/a | yes |
-| whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| Name                        | Description                                    | Type                                                                                                                                                                     | Default                           | Required |
+| --------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- | :------: |
+| ami_id                      | Which image to use                             | `string`                                                                                                                                                                 | n/a                               |   yes    |
+| associate_public_ip_address | n/a                                            | `bool`                                                                                                                                                                   | `false`                           |    no    |
+| common_tags                 | Implements the common_tags scheme              | `map`                                                                                                                                                                    | n/a                               |   yes    |
+| elb-whitelist               | The allow list                                 | `list`                                                                                                                                                                   | <pre>[<br> "0.0.0.0/0"<br>]</pre> |    no    |
+| instance_type               | THe instance type                              | `string`                                                                                                                                                                 | n/a                               |   yes    |
+| key_name                    | description                                    | `string`                                                                                                                                                                 | n/a                               |   yes    |
+| listeners                   | Details for SSL redirect                       | <pre>list(object({ instance_port = number,<br> instance_protocol = string,<br> lb_port = number,<br> lb_protocol = string,<br> ssl_certificate_id = string<br> }))</pre> | n/a                               |   yes    |
+| need_db                     | Only create db when set                        | `number`                                                                                                                                                                 | `0`                               |    no    |
+| private_subnets             | n/a                                            | `list`                                                                                                                                                                   | n/a                               |   yes    |
+| public_subnets              | n/a                                            | `list`                                                                                                                                                                   | n/a                               |   yes    |
+| vpc_id                      | The id for the vpc                             | `string`                                                                                                                                                                 | n/a                               |   yes    |
+| whitelist                   | The CIDRs that can have access to the instance | `list`                                                                                                                                                                   | <pre>[<br> "0.0.0.0/0"<br>]</pre> |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| artifact-bucket | n/a |
-| dbpassword | n/a |
-| elb | n/a |
-| password | n/a |
-| server | n/a |
-| teamcity\_db | n/a |
+| Name            | Description |
+| --------------- | ----------- |
+| artifact-bucket | n/a         |
+| dbpassword      | n/a         |
+| elb             | n/a         |
+| password        | n/a         |
+| server          | n/a         |
+| teamcity_db     | n/a         |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Instructions
 
 ## Related Projects
@@ -116,7 +116,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -125,19 +125,19 @@ Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -147,12 +147,9 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/JamesWoolfenden
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-teamcity&url=https://github.com/jameswoolfenden/terraform-aws-teamcity
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-teamcity&url=https://github.com/jameswoolfenden/terraform-aws-teamcity
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/jameswoolfenden/terraform-aws-teamcity
