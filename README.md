@@ -50,47 +50,46 @@ common_tags={
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name   | Version |
-| ------ | ------- |
-| aws    | n/a     |
-| local  | n/a     |
-| random | n/a     |
-| tls    | n/a     |
+| Name | Version |
+|------|---------|
+| aws | n/a |
+| local | n/a |
+| random | n/a |
+| tls | n/a |
 
 ## Inputs
 
-| Name                        | Description                                    | Type                                                                                                                                                                     | Default                           | Required |
-| --------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- | :------: |
-| ami_id                      | Which image to use                             | `string`                                                                                                                                                                 | n/a                               |   yes    |
-| associate_public_ip_address | n/a                                            | `bool`                                                                                                                                                                   | `false`                           |    no    |
-| common_tags                 | Implements the common_tags scheme              | `map`                                                                                                                                                                    | n/a                               |   yes    |
-| elb-whitelist               | The allow list                                 | `list`                                                                                                                                                                   | <pre>[<br> "0.0.0.0/0"<br>]</pre> |    no    |
-| instance_type               | THe instance type                              | `string`                                                                                                                                                                 | n/a                               |   yes    |
-| key_name                    | description                                    | `string`                                                                                                                                                                 | n/a                               |   yes    |
-| listeners                   | Details for SSL redirect                       | <pre>list(object({ instance_port = number,<br> instance_protocol = string,<br> lb_port = number,<br> lb_protocol = string,<br> ssl_certificate_id = string<br> }))</pre> | n/a                               |   yes    |
-| need_db                     | Only create db when set                        | `number`                                                                                                                                                                 | `0`                               |    no    |
-| private_subnets             | n/a                                            | `list`                                                                                                                                                                   | n/a                               |   yes    |
-| public_subnets              | n/a                                            | `list`                                                                                                                                                                   | n/a                               |   yes    |
-| vpc_id                      | The id for the vpc                             | `string`                                                                                                                                                                 | n/a                               |   yes    |
-| whitelist                   | The CIDRs that can have access to the instance | `list`                                                                                                                                                                   | <pre>[<br> "0.0.0.0/0"<br>]</pre> |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| ami\_id | Which image to use | `string` | n/a | yes |
+| associate\_public\_ip\_address | n/a | `bool` | `false` | no |
+| common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
+| elb-whitelist | The allow list | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| instance\_type | THe instance type | `string` | n/a | yes |
+| key\_name | description | `string` | n/a | yes |
+| listeners | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))</pre> | n/a | yes |
+| need\_db | Only create db when set | `number` | `0` | no |
+| private\_subnets | n/a | `list` | n/a | yes |
+| public\_subnets | n/a | `list` | n/a | yes |
+| vpc\_id | The id for the vpc | `string` | n/a | yes |
+| whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 
 ## Outputs
 
-| Name            | Description |
-| --------------- | ----------- |
-| artifact-bucket | n/a         |
-| dbpassword      | n/a         |
-| elb             | n/a         |
-| password        | n/a         |
-| server          | n/a         |
-| teamcity_db     | n/a         |
+| Name | Description |
+|------|-------------|
+| artifact-bucket | n/a |
+| dbpassword | n/a |
+| elb | n/a |
+| password | n/a |
+| server | n/a |
+| teamcity\_db | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
