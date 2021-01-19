@@ -2,8 +2,12 @@
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-teamcity/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-teamcity)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-teamcity.svg)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-teamcity.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
+![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-teamcity/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-teamcity&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-teamcity/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-teamcity&benchmark=INFRASTRUCTURE+SECURITY)
 
 This module is to create a Teamcity CICD server on EC2. Its is fully automatic it install Teamcity as part of the userdata payload.
 
@@ -69,16 +73,16 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | ami\_id | Which image to use | `string` | n/a | yes |
 | associate\_public\_ip\_address | n/a | `bool` | `false` | no |
-| common\_tags | Implements the common\_tags scheme | `map` | n/a | yes |
-| elb-whitelist | The allow list | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| common\_tags | Implements the common\_tags scheme | `map(any)` | n/a | yes |
+| elb-whitelist | The allow list | `list(any)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 | instance\_type | THe instance type | `string` | n/a | yes |
 | key\_name | description | `string` | n/a | yes |
 | listeners | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))</pre> | n/a | yes |
 | need\_db | Only create db when set | `number` | `0` | no |
-| private\_subnets | n/a | `list` | n/a | yes |
-| public\_subnets | n/a | `list` | n/a | yes |
+| private\_subnets | n/a | `list(any)` | n/a | yes |
+| public\_subnets | n/a | `list(any)` | n/a | yes |
 | vpc\_id | The id for the vpc | `string` | n/a | yes |
-| whitelist | The CIDRs that can have access to the instance | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| whitelist | The CIDRs that can have access to the instance | `list(any)` | <pre>[<br>  "10.0.0.0/0"<br>]</pre> | no |
 
 ## Outputs
 
@@ -115,7 +119,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2020 James Woolfenden
+Copyright © 2019-2021 James Woolfenden
 
 ## License
 

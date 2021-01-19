@@ -28,22 +28,22 @@ variable "vpc_id" {
 }
 
 variable "common_tags" {
-  type        = map
+  type        = map(any)
   description = "Implements the common_tags scheme"
 }
 
 variable "whitelist" {
   description = "The CIDRs that can have access to the instance"
-  type        = list
-  default     = ["0.0.0.0/0"]
+  type        = list(any)
+  default     = ["10.0.0.0/0"]
 }
 
 variable "private_subnets" {
-  type = list
+  type = list(any)
 }
 
 variable "public_subnets" {
-  type = list
+  type = list(any)
 }
 
 variable "need_db" {
@@ -56,7 +56,7 @@ variable "need_db" {
 }
 
 variable "elb-whitelist" {
-  type        = list
+  type        = list(any)
   description = "The allow list"
   default     = ["0.0.0.0/0"]
 }
