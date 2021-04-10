@@ -1,6 +1,9 @@
 resource "aws_instance" "teamcity" {
-  ami                    = var.ami_id
-  instance_type          = var.instance_type
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  monitoring    = true
+  ebs_optimized = true
+
   key_name               = aws_key_pair.teamcity.key_name
   subnet_id              = element(var.private_subnets, 0)
   vpc_security_group_ids = [aws_security_group.teamcity.id]

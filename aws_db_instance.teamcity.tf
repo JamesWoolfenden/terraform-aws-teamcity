@@ -1,16 +1,52 @@
 resource "aws_db_instance" "teamcity" {
   count                  = var.need_db
-  allocated_storage      = 10
+  allocated_storage      = var.allocated_storage
+  db_subnet_group_name   = aws_db_subnet_group.teamcity.0.name
   engine                 = "mysql"
-  engine_version         = "5.7.11"
-  instance_class         = "db.t2.small"
+  engine_version         = var.engine_version
+  instance_class         = var.instance_class
+  monitoring_interval    = var.monitoring_interval
+  monitoring_role_arn    = var.monitoring_role_arn
   name                   = "teamcity"
   password               = random_string.dbpassword.result
-  username               = "teamcity"
   storage_encrypted      = true
+  username               = "teamcity"
   vpc_security_group_ids = [aws_security_group.rds.0.id]
 
-  db_subnet_group_name = aws_db_subnet_group.teamcity.0.name
-
   tags = var.common_tags
+}
+
+
+variable "engine_version" {
+  type        = string
+  default     = "5.7.11"
+  description = "MySQl Version"
+}
+
+
+variable "instance_class" {
+  type        = string
+  default     = "db.t2.small"
+  description = "Instance DB size"
+}
+
+variable "monitoring_interval" {
+  type        = string
+  description = "The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance"
+  default     = 30
+
+  validation {
+    condition     = can(regex("0|1|5|10|15|30|60", var.monitoring_interval))
+    error_message = "Valid Values: 0, 1, 5, 10, 15, 30, 60."
+  }
+}
+
+variable "monitoring_role_arn" {
+  type    = string
+  default = ""
+}
+
+variable "allocated_storage" {
+  type    = number
+  default = 10
 }
