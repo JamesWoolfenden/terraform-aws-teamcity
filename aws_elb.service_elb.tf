@@ -1,3 +1,4 @@
+# tfsec:ignore:AWS005
 resource "aws_elb" "service_elb" {
   #checkov:skip=CKV_AWS_92: "Ensure the ELB has access logging enabled"
   subnets         = var.public_subnets
