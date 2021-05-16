@@ -3,7 +3,7 @@ variable "ami_id" {
   type        = string
   description = "Which image to use"
   validation {
-    condition     = length(var.ami_id) > 21 && substr(var.ami_id, 0, 4) == "ami-"
+    condition     = length(var.ami_id) >= 21 && substr(var.ami_id, 0, 4) == "ami-"
     error_message = "The AMI ids need to start with ami- and is 21 characters."
   }
 }
@@ -35,7 +35,7 @@ variable "common_tags" {
 variable "whitelist" {
   description = "The CIDRs that can have access to the instance"
   type        = list(any)
-  default     = ["10.0.0.0/0"]
+  default     = ["10.0.0.0/16"]
 }
 
 variable "private_subnets" {

@@ -1,17 +1,19 @@
 resource "aws_db_instance" "teamcity" {
-  count                  = var.need_db
-  allocated_storage      = var.allocated_storage
-  db_subnet_group_name   = aws_db_subnet_group.teamcity.0.name
-  engine                 = "mysql"
-  engine_version         = var.engine_version
-  instance_class         = var.instance_class
-  monitoring_interval    = var.monitoring_interval
-  monitoring_role_arn    = var.monitoring_role_arn
-  name                   = "teamcity"
-  password               = random_string.dbpassword.result
-  storage_encrypted      = true
-  username               = "teamcity"
-  vpc_security_group_ids = [aws_security_group.rds.0.id]
+  # checkov:skip=CKV_AWS_157: ADD REASON
+  count                           = var.need_db
+  allocated_storage               = var.allocated_storage
+  db_subnet_group_name            = aws_db_subnet_group.teamcity.0.name
+  engine                          = "mysql"
+  engine_version                  = var.engine_version
+  instance_class                  = var.instance_class
+  monitoring_interval             = var.monitoring_interval
+  monitoring_role_arn             = var.monitoring_role_arn
+  name                            = "teamcity"
+  password                        = random_string.dbpassword.result
+  storage_encrypted               = true
+  username                        = "teamcity"
+  enabled_cloudwatch_logs_exports = ["general", "error", "slowquery"]
+  vpc_security_group_ids          = [aws_security_group.rds.0.id]
 
   tags = var.common_tags
 }

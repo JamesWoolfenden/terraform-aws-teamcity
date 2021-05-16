@@ -1,6 +1,6 @@
 module "teamcity" {
   source                      = "../../"
-  ami_id                      = data.aws_ami.amazon.id
+  ami_id                      = data.aws_ami.amazon.image_id
   associate_public_ip_address = false
   common_tags                 = var.common_tags
   instance_type               = var.instance_type

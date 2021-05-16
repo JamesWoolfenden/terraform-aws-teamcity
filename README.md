@@ -115,7 +115,7 @@ No modules.
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | n/a | `list(any)` | n/a | yes |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | n/a | `list(any)` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The id for the vpc | `string` | n/a | yes |
-| <a name="input_whitelist"></a> [whitelist](#input\_whitelist) | The CIDRs that can have access to the instance | `list(any)` | <pre>[<br>  "10.0.0.0/0"<br>]</pre> | no |
+| <a name="input_whitelist"></a> [whitelist](#input\_whitelist) | The CIDRs that can have access to the instance | `list(any)` | <pre>[<br>  "10.0.0.0/16"<br>]</pre> | no |
 
 ## Outputs
 
