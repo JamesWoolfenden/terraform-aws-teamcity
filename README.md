@@ -84,6 +84,7 @@ No modules.
 | [aws_instance.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
 | [aws_key_pair.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
 | [aws_s3_bucket.artifact](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket_public_access_block.artifacts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
 | [aws_security_group.elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 | [aws_security_group.rds](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 | [aws_security_group.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
@@ -102,6 +103,7 @@ No modules.
 | <a name="input_allocated_storage"></a> [allocated\_storage](#input\_allocated\_storage) | n/a | `number` | `10` | no |
 | <a name="input_ami_id"></a> [ami\_id](#input\_ami\_id) | Which image to use | `string` | n/a | yes |
 | <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | n/a | `bool` | `false` | no |
+| <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | n/a | `number` | `14` | no |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common\_tags scheme | `map(any)` | n/a | yes |
 | <a name="input_elb-whitelist"></a> [elb-whitelist](#input\_elb-whitelist) | The allow list | `list(any)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 | <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | MySQl Version | `string` | `"5.7.11"` | no |

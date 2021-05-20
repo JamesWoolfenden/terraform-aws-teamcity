@@ -1,4 +1,5 @@
 resource "aws_instance" "teamcity" {
+  # checkov:skip= CKV2_AWS_17: its bogus
   ami           = var.ami_id
   instance_type = var.instance_type
   monitoring    = true

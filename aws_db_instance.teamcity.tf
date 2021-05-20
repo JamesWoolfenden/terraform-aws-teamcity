@@ -1,6 +1,7 @@
 resource "aws_db_instance" "teamcity" {
-  # checkov:skip=CKV_AWS_157: ADD REASON
+  # checkov:skip=CKV_AWS_157: multi region not required
   count                           = var.need_db
+  backup_retention_period         = var.backup_retention_period
   allocated_storage               = var.allocated_storage
   db_subnet_group_name            = aws_db_subnet_group.teamcity.0.name
   engine                          = "mysql"
@@ -18,6 +19,10 @@ resource "aws_db_instance" "teamcity" {
   tags = var.common_tags
 }
 
+variable "backup_retention_period" {
+  type    = number
+  default = 14
+}
 
 variable "engine_version" {
   type        = string
