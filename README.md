@@ -53,6 +53,90 @@ common_tags={
 }
 ```
 
+## Costs
+
+Monthly cost estimate:
+
+```text
+Project: .
+
+ Name                                                Monthly Qty  Unit         Monthly Cost
+
+ module.teamcity.aws_elb.service_elb
+ ├─ Classic load balancer                                    730  hours              $21.46
+ └─ Data processed                                             0  GB                  $0.00
+
+ module.teamcity.aws_instance.teamcity
+ ├─ Instance usage (Linux/UNIX, reserved, t2.micro)          730  hours               $0.00
+ ├─ EC2 detailed monitoring                                    7  metrics             $2.10
+ └─ root_block_device
+    └─ Storage (general purpose SSD, gp2)                      8  GB-months           $0.93
+
+ module.teamcity.aws_s3_bucket.artifact
+ ├─ Glacier deep archive
+ │  ├─ Storage                                                 0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                          0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests                     0  1k requests         $0.00
+ │  ├─ Lifecycle transition                                    0  1k requests         $0.00
+ │  ├─ Retrieval requests (standard)                           0  1k requests         $0.00
+ │  ├─ Retrievals (standard)                                   0  GB-months           $0.00
+ │  ├─ Retrieval requests (bulk)                               0  1k requests         $0.00
+ │  ├─ Retrievals (bulk)                                       0  GB-months           $0.00
+ │  └─ Early delete (within 180 days)                          0  GB-months           $0.00
+ ├─ Standard
+ │  ├─ Storage                                                 0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                          0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests                     0  1k requests         $0.00
+ │  ├─ Select data scanned                                     0  GB-months           $0.00
+ │  └─ Select data returned                                    0  GB-months           $0.00
+ ├─ Intelligent tiering
+ │  ├─ Storage (frequent access)                               0  GB-months           $0.00
+ │  ├─ Storage (infrequent access)                             0  GB-months           $0.00
+ │  ├─ Monitoring and automation                               0  1k objects          $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                          0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests                     0  1k requests         $0.00
+ │  ├─ Lifecycle transition                                    0  1k requests         $0.00
+ │  ├─ Select data scanned                                     0  GB-months           $0.00
+ │  ├─ Select data returned                                    0  GB-months           $0.00
+ │  └─ Early delete (within 30 days)                           0  GB-months           $0.00
+ ├─ Standard - infrequent access
+ │  ├─ Storage                                                 0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                          0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests                     0  1k requests         $0.00
+ │  ├─ Lifecycle transition                                    0  1k requests         $0.00
+ │  ├─ Retrievals                                              0  GB-months           $0.00
+ │  ├─ Select data scanned                                     0  GB-months           $0.00
+ │  └─ Select data returned                                    0  GB-months           $0.00
+ ├─ One zone - infrequent access
+ │  ├─ Storage                                                 0  GB-months           $0.00
+ │  ├─ PUT, COPY, POST, LIST requests                          0  1k requests         $0.00
+ │  ├─ GET, SELECT, and all other requests                     0  1k requests         $0.00
+ │  ├─ Lifecycle transition                                    0  1k requests         $0.00
+ │  ├─ Retrievals                                              0  GB-months           $0.00
+ │  ├─ Select data scanned                                     0  GB-months           $0.00
+ │  └─ Select data returned                                    0  GB-months           $0.00
+ └─ Glacier
+    ├─ Storage                                                 0  GB-months           $0.00
+    ├─ PUT, COPY, POST, LIST requests                          0  1k requests         $0.00
+    ├─ GET, SELECT, and all other requests                     0  1k requests         $0.00
+    ├─ Lifecycle transition                                    0  1k requests         $0.00
+    ├─ Retrieval requests (standard)                           0  1k requests         $0.00
+    ├─ Retrievals (standard)                                   0  GB-months           $0.00
+    ├─ Select data scanned (standard)                          0  GB-months           $0.00
+    ├─ Select data returned (standard)                         0  GB-months           $0.00
+    ├─ Retrieval requests (expedited)                          0  1k requests         $0.00
+    ├─ Retrievals (expedited)                                  0  GB-months           $0.00
+    ├─ Select data scanned (expedited)                         0  GB-months           $0.00
+    ├─ Select data returned (expedited)                        0  GB-months           $0.00
+    ├─ Retrieval requests (bulk)                               0  1k requests         $0.00
+    ├─ Retrievals (bulk)                                       0  GB-months           $0.00
+    ├─ Select data scanned (bulk)                              0  GB-months           $0.00
+    ├─ Select data returned (bulk)                             0  GB-months           $0.00
+    └─ Early delete (within 90 days)                           0  GB-months           $0.00
+
+ PROJECT TOTAL                                                                       $24.49
+ ```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
