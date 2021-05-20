@@ -42,7 +42,7 @@ jobs:
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      - name: costings
+      - name: Bills
         run: |
           pip3 install lastversion
           lastversion infracost --assets -d --verbose
@@ -80,7 +80,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Bump version and push tag
-        if: ${{ !env.ACT }}
         uses: anothrNick/github-tag-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
