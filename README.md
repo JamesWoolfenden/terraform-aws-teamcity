@@ -135,21 +135,22 @@ Project: .
     └─ Early delete (within 90 days)                           0  GB-months           $0.00
 
  PROJECT TOTAL                                                                       $24.49
- ```
+```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_local"></a> [local](#provider\_local) | n/a |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
-| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
+| Name                                                      | Version |
+| --------------------------------------------------------- | ------- |
+| <a name="provider_aws"></a> [aws](#provider_aws)          | n/a     |
+| <a name="provider_local"></a> [local](#provider_local)    | n/a     |
+| <a name="provider_random"></a> [random](#provider_random) | n/a     |
+| <a name="provider_tls"></a> [tls](#provider_tls)          | n/a     |
 
 ## Modules
 
@@ -157,62 +158,63 @@ No modules.
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [aws_db_instance.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance) | resource |
-| [aws_db_subnet_group.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group) | resource |
-| [aws_elb.service_elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) | resource |
-| [aws_iam_instance_profile.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
-| [aws_iam_role.teamcity-server](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy_attachment.ssm-attach](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
-| [aws_instance.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
-| [aws_key_pair.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
-| [aws_s3_bucket.artifact](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
-| [aws_s3_bucket_public_access_block.artifacts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
-| [aws_security_group.elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group.rds](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [local_file.private_key_pem](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
-| [local_file.public_key_pem](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
-| [random_string.dbpassword](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
-| [random_string.password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
-| [tls_private_key.teamcity](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
-| [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| Name                                                                                                                                                     | Type        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| [aws_db_instance.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance)                                      | resource    |
+| [aws_db_subnet_group.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group)                              | resource    |
+| [aws_elb.service_elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb)                                                   | resource    |
+| [aws_iam_instance_profile.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile)                    | resource    |
+| [aws_iam_role.teamcity-server](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role)                                     | resource    |
+| [aws_iam_role_policy_attachment.ssm-attach](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment)      | resource    |
+| [aws_instance.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance)                                            | resource    |
+| [aws_key_pair.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair)                                            | resource    |
+| [aws_s3_bucket.artifact](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)                                          | resource    |
+| [aws_s3_bucket_public_access_block.artifacts](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource    |
+| [aws_security_group.elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group)                                     | resource    |
+| [aws_security_group.rds](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group)                                     | resource    |
+| [aws_security_group.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group)                                | resource    |
+| [local_file.private_key_pem](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file)                                         | resource    |
+| [local_file.public_key_pem](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file)                                          | resource    |
+| [random_string.dbpassword](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)                                        | resource    |
+| [random_string.password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)                                          | resource    |
+| [tls_private_key.teamcity](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key)                                      | resource    |
+| [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones)                    | data source |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity)                            | data source |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_allocated_storage"></a> [allocated\_storage](#input\_allocated\_storage) | n/a | `number` | `10` | no |
-| <a name="input_ami_id"></a> [ami\_id](#input\_ami\_id) | Which image to use | `string` | n/a | yes |
-| <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | n/a | `bool` | `false` | no |
-| <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | n/a | `number` | `14` | no |
-| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common\_tags scheme | `map(any)` | n/a | yes |
-| <a name="input_elb-whitelist"></a> [elb-whitelist](#input\_elb-whitelist) | The allow list | `list(any)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
-| <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | MySQl Version | `string` | `"5.7.11"` | no |
-| <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | Instance DB size | `string` | `"db.t2.small"` | no |
-| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | THe instance type | `string` | n/a | yes |
-| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | description | `string` | n/a | yes |
-| <a name="input_listeners"></a> [listeners](#input\_listeners) | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))</pre> | n/a | yes |
-| <a name="input_monitoring_interval"></a> [monitoring\_interval](#input\_monitoring\_interval) | The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance | `string` | `30` | no |
-| <a name="input_monitoring_role_arn"></a> [monitoring\_role\_arn](#input\_monitoring\_role\_arn) | n/a | `string` | `""` | no |
-| <a name="input_need_db"></a> [need\_db](#input\_need\_db) | Only create db when set | `number` | `0` | no |
-| <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | n/a | `list(any)` | n/a | yes |
-| <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | n/a | `list(any)` | n/a | yes |
-| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The id for the vpc | `string` | n/a | yes |
-| <a name="input_whitelist"></a> [whitelist](#input\_whitelist) | The CIDRs that can have access to the instance | `list(any)` | <pre>[<br>  "10.0.0.0/16"<br>]</pre> | no |
+| Name                                                                                                               | Description                                                                                                 | Type                                                                                                                                                                     | Default                             | Required |
+| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | :------: |
+| <a name="input_allocated_storage"></a> [allocated_storage](#input_allocated_storage)                               | n/a                                                                                                         | `number`                                                                                                                                                                 | `10`                                |    no    |
+| <a name="input_ami_id"></a> [ami_id](#input_ami_id)                                                                | Which image to use                                                                                          | `string`                                                                                                                                                                 | n/a                                 |   yes    |
+| <a name="input_associate_public_ip_address"></a> [associate_public_ip_address](#input_associate_public_ip_address) | n/a                                                                                                         | `bool`                                                                                                                                                                   | `false`                             |    no    |
+| <a name="input_backup_retention_period"></a> [backup_retention_period](#input_backup_retention_period)             | n/a                                                                                                         | `number`                                                                                                                                                                 | `14`                                |    no    |
+| <a name="input_common_tags"></a> [common_tags](#input_common_tags)                                                 | Implements the common_tags scheme                                                                           | `map(any)`                                                                                                                                                               | n/a                                 |   yes    |
+| <a name="input_elb-whitelist"></a> [elb-whitelist](#input_elb-whitelist)                                           | The allow list                                                                                              | `list(any)`                                                                                                                                                              | <pre>[<br> "0.0.0.0/0"<br>]</pre>   |    no    |
+| <a name="input_engine_version"></a> [engine_version](#input_engine_version)                                        | MySQl Version                                                                                               | `string`                                                                                                                                                                 | `"5.7.11"`                          |    no    |
+| <a name="input_instance_class"></a> [instance_class](#input_instance_class)                                        | Instance DB size                                                                                            | `string`                                                                                                                                                                 | `"db.t2.small"`                     |    no    |
+| <a name="input_instance_type"></a> [instance_type](#input_instance_type)                                           | THe instance type                                                                                           | `string`                                                                                                                                                                 | n/a                                 |   yes    |
+| <a name="input_key_name"></a> [key_name](#input_key_name)                                                          | description                                                                                                 | `string`                                                                                                                                                                 | n/a                                 |   yes    |
+| <a name="input_listeners"></a> [listeners](#input_listeners)                                                       | Details for SSL redirect                                                                                    | <pre>list(object({ instance_port = number,<br> instance_protocol = string,<br> lb_port = number,<br> lb_protocol = string,<br> ssl_certificate_id = string<br> }))</pre> | n/a                                 |   yes    |
+| <a name="input_monitoring_interval"></a> [monitoring_interval](#input_monitoring_interval)                         | The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance | `string`                                                                                                                                                                 | `30`                                |    no    |
+| <a name="input_monitoring_role_arn"></a> [monitoring_role_arn](#input_monitoring_role_arn)                         | n/a                                                                                                         | `string`                                                                                                                                                                 | `""`                                |    no    |
+| <a name="input_need_db"></a> [need_db](#input_need_db)                                                             | Only create db when set                                                                                     | `number`                                                                                                                                                                 | `0`                                 |    no    |
+| <a name="input_private_subnets"></a> [private_subnets](#input_private_subnets)                                     | n/a                                                                                                         | `list(any)`                                                                                                                                                              | n/a                                 |   yes    |
+| <a name="input_public_subnets"></a> [public_subnets](#input_public_subnets)                                        | n/a                                                                                                         | `list(any)`                                                                                                                                                              | n/a                                 |   yes    |
+| <a name="input_vpc_id"></a> [vpc_id](#input_vpc_id)                                                                | The id for the vpc                                                                                          | `string`                                                                                                                                                                 | n/a                                 |   yes    |
+| <a name="input_whitelist"></a> [whitelist](#input_whitelist)                                                       | The CIDRs that can have access to the instance                                                              | `list(any)`                                                                                                                                                              | <pre>[<br> "10.0.0.0/16"<br>]</pre> |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_artifact-bucket"></a> [artifact-bucket](#output\_artifact-bucket) | n/a |
-| <a name="output_dbpassword"></a> [dbpassword](#output\_dbpassword) | n/a |
-| <a name="output_elb"></a> [elb](#output\_elb) | n/a |
-| <a name="output_password"></a> [password](#output\_password) | n/a |
-| <a name="output_server"></a> [server](#output\_server) | n/a |
-| <a name="output_teamcity_db"></a> [teamcity\_db](#output\_teamcity\_db) | n/a |
+| Name                                                                             | Description |
+| -------------------------------------------------------------------------------- | ----------- |
+| <a name="output_artifact-bucket"></a> [artifact-bucket](#output_artifact-bucket) | n/a         |
+| <a name="output_dbpassword"></a> [dbpassword](#output_dbpassword)                | n/a         |
+| <a name="output_elb"></a> [elb](#output_elb)                                     | n/a         |
+| <a name="output_password"></a> [password](#output_password)                      | n/a         |
+| <a name="output_server"></a> [server](#output_server)                            | n/a         |
+| <a name="output_teamcity_db"></a> [teamcity_db](#output_teamcity_db)             | n/a         |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Instructions
@@ -237,7 +239,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2021 James Woolfenden
+Copyright © 2019-2022 James Woolfenden
 
 ## License
 
