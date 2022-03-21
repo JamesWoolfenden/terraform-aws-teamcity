@@ -9,7 +9,7 @@ resource "aws_db_instance" "teamcity" {
   instance_class                  = var.instance_class
   monitoring_interval             = var.monitoring_interval
   monitoring_role_arn             = var.monitoring_role_arn
-  name                            = "teamcity"
+  db_name                         = "teamcity"
   password                        = random_string.dbpassword.result
   storage_encrypted               = true
   username                        = "teamcity"
