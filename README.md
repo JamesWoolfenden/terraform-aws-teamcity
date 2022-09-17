@@ -224,6 +224,144 @@ No modules.
 This is the policy required to build this project:
 
 <!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
+The Terraform resource required is:
+
+```golang
+resource "aws_iam_policy" "terraformXVlBzgba" {
+  name        = "terraformXVlBzgba"
+  path        = "/"
+  description = "Add Description"
+
+  policy = jsonencode({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateKeyPair",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateTags",
+                "ec2:DeleteKeyPair",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DeleteTags",
+                "ec2:DescribeAccountAttributes",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstanceCreditSpecifications",
+                "ec2:DescribeInstanceTypes",
+                "ec2:DescribeInstances",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeTags",
+                "ec2:DescribeVolumes",
+                "ec2:ImportKeyPair",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:MonitorInstances",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:RunInstances",
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:TerminateInstances",
+                "ec2:UnmonitorInstances"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:AddTags",
+                "elasticloadbalancing:AttachLoadBalancerToSubnets",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "elasticloadbalancing:CreateLoadBalancerListeners",
+                "elasticloadbalancing:DeleteLoadBalancer",
+                "elasticloadbalancing:DescribeLoadBalancerAttributes",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "elasticloadbalancing:DescribeTags",
+                "elasticloadbalancing:ModifyLoadBalancerAttributes",
+                "elasticloadbalancing:RemoveTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "iam:AddRoleToInstanceProfile",
+                "iam:AttachRolePolicy",
+                "iam:CreateInstanceProfile",
+                "iam:CreateRole",
+                "iam:DeleteInstanceProfile",
+                "iam:DeleteRole",
+                "iam:DetachRolePolicy",
+                "iam:GetInstanceProfile",
+                "iam:GetRole",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListInstanceProfilesForRole",
+                "iam:ListRolePolicies",
+                "iam:PassRole",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:UpdateRoleDescription"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": [
+                "rds:AddTagsToResource",
+                "rds:CreateDBInstance",
+                "rds:CreateDBSubnetGroup",
+                "rds:DeleteDBSubnetGroup",
+                "rds:DescribeDBInstances",
+                "rds:DescribeDBSubnetGroups",
+                "rds:ListTagsForResource",
+                "rds:ModifyDBInstance",
+                "rds:RemoveTagsFromResource"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor4",
+            "Effect": "Allow",
+            "Action": [
+                "s3:CreateBucket",
+                "s3:DeleteBucket",
+                "s3:GetAccelerateConfiguration",
+                "s3:GetBucketAcl",
+                "s3:GetBucketCORS",
+                "s3:GetBucketLogging",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetBucketPolicy",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketRequestPayment",
+                "s3:GetBucketTagging",
+                "s3:GetBucketVersioning",
+                "s3:GetBucketWebsite",
+                "s3:GetEncryptionConfiguration",
+                "s3:GetLifecycleConfiguration",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:GetReplicationConfiguration",
+                "s3:ListAllMyBuckets",
+                "s3:ListBucket",
+                "s3:PutBucketAcl",
+                "s3:PutBucketPublicAccessBlock",
+                "s3:PutBucketVersioning",
+                "s3:PutEncryptionConfiguration"
+            ],
+            "Resource": "*"
+        }
+    ]
+})
+}
+
+
 ```
 <!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
 
