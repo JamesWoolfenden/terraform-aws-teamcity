@@ -1,5 +1,6 @@
 resource "aws_security_group" "elb" {
   # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
+  # checkov:skip=CKV_AWS_260: Ingress CIDR is configurable via elb-whitelist variable
   name        = "teamcity-elb"
   vpc_id      = var.vpc_id
   description = "Protects ELB access"

@@ -239,28 +239,38 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
+                "ec2:AssociateIamInstanceProfile",
                 "ec2:AuthorizeSecurityGroupEgress",
                 "ec2:AuthorizeSecurityGroupIngress",
                 "ec2:CreateKeyPair",
                 "ec2:CreateSecurityGroup",
                 "ec2:CreateTags",
                 "ec2:DeleteKeyPair",
+                "ec2:DeleteNetworkInterface",
                 "ec2:DeleteSecurityGroup",
                 "ec2:DeleteTags",
                 "ec2:DescribeAccountAttributes",
                 "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeIamInstanceProfileAssociations",
                 "ec2:DescribeInstanceAttribute",
                 "ec2:DescribeInstanceCreditSpecifications",
                 "ec2:DescribeInstanceTypes",
                 "ec2:DescribeInstances",
+                "ec2:DescribeInternetGateways",
                 "ec2:DescribeKeyPairs",
                 "ec2:DescribeNetworkInterfaces",
                 "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets",
                 "ec2:DescribeTags",
                 "ec2:DescribeVolumes",
+                "ec2:DescribeVpcAttribute",
+                "ec2:DescribeVpcs",
+                "ec2:DetachNetworkInterface",
+                "ec2:DisassociateIamInstanceProfile",
                 "ec2:ImportKeyPair",
                 "ec2:ModifyInstanceAttribute",
                 "ec2:MonitorInstances",
+                "ec2:ReplaceIamInstanceProfileAssociation",
                 "ec2:RevokeSecurityGroupEgress",
                 "ec2:RevokeSecurityGroupIngress",
                 "ec2:RunInstances",
@@ -269,7 +279,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "ec2:TerminateInstances",
                 "ec2:UnmonitorInstances"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor1",
@@ -284,9 +296,12 @@ resource "aws_iam_policy" "terraform_pike" {
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "elasticloadbalancing:DescribeTags",
                 "elasticloadbalancing:ModifyLoadBalancerAttributes",
-                "elasticloadbalancing:RemoveTags"
+                "elasticloadbalancing:RemoveTags",
+                "elasticloadbalancing:SetSecurityGroups"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor2",
@@ -296,6 +311,7 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:AttachRolePolicy",
                 "iam:CreateInstanceProfile",
                 "iam:CreateRole",
+                "iam:CreateServiceLinkedRole",
                 "iam:DeleteInstanceProfile",
                 "iam:DeleteRole",
                 "iam:DetachRolePolicy",
@@ -304,11 +320,14 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:ListAttachedRolePolicies",
                 "iam:ListInstanceProfilesForRole",
                 "iam:ListRolePolicies",
+                "iam:ListRoles",
                 "iam:PassRole",
                 "iam:RemoveRoleFromInstanceProfile",
                 "iam:UpdateRoleDescription"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor3",
@@ -316,15 +335,25 @@ resource "aws_iam_policy" "terraform_pike" {
             "Action": [
                 "rds:AddTagsToResource",
                 "rds:CreateDBInstance",
+                "rds:CreateDBSnapshot",
                 "rds:CreateDBSubnetGroup",
+                "rds:DeleteDBInstance",
                 "rds:DeleteDBSubnetGroup",
+                "rds:DescribeDBClusters",
+                "rds:DescribeDBEngineVersions",
+                "rds:DescribeDBInstanceAutomatedBackups",
                 "rds:DescribeDBInstances",
+                "rds:DescribeDBParameterGroups",
                 "rds:DescribeDBSubnetGroups",
                 "rds:ListTagsForResource",
                 "rds:ModifyDBInstance",
+                "rds:ModifyDBSubnetGroup",
+                "rds:RebootDBInstance",
                 "rds:RemoveTagsFromResource"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor4",
@@ -352,10 +381,24 @@ resource "aws_iam_policy" "terraform_pike" {
                 "s3:ListBucket",
                 "s3:PutBucketAcl",
                 "s3:PutBucketPublicAccessBlock",
+                "s3:PutBucketTagging",
                 "s3:PutBucketVersioning",
                 "s3:PutEncryptionConfiguration"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor5",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DeleteParameter",
+                "ssm:PutParameter"
+            ],
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })

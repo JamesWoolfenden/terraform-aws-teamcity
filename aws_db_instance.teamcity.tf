@@ -15,6 +15,7 @@ resource "aws_db_instance" "teamcity" {
   username                        = "teamcity"
   enabled_cloudwatch_logs_exports = ["general", "error", "slowquery"]
   vpc_security_group_ids          = [aws_security_group.rds.0.id]
+  copy_tags_to_snapshot           = true
 
   tags = var.common_tags
 }
