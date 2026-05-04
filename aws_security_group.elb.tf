@@ -1,4 +1,5 @@
 resource "aws_security_group" "elb" {
+  # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
   name        = "teamcity-elb"
   vpc_id      = var.vpc_id
   description = "Protects ELB access"

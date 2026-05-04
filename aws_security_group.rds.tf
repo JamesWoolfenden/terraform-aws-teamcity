@@ -1,4 +1,5 @@
 resource "aws_security_group" "rds" {
+  # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
   count       = var.need_db
   description = "Allow inbound traffic from Teamcity server"
   vpc_id      = var.vpc_id

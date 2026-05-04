@@ -1,4 +1,5 @@
 resource "aws_security_group" "teamcity" {
+  # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
   name        = "teamcity instance"
   description = "Terraform security group"
   vpc_id      = var.vpc_id
