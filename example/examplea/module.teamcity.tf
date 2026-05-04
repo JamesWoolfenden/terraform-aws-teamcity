@@ -6,8 +6,8 @@ module "teamcity" {
   instance_type               = var.instance_type
   key_name                    = var.key_name
   kms_key                     = aws_kms_key.example
-  private_subnets             = data.aws_subnets.private.ids
-  public_subnets              = data.aws_subnets.public.ids
+  private_subnets             = var.private_subnets
+  public_subnets              = var.public_subnets
   vpc_id                      = var.vpc_id
   listeners = [
     {
