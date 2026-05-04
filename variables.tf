@@ -40,10 +40,6 @@ variable "whitelist" {
 
 variable "private_subnets" {
   type = list(any)
-  validation {
-    condition     = length(var.private_subnets) > 0
-    error_message = "At least one private subnet must be provided."
-  }
 }
 
 variable "public_subnets" {
