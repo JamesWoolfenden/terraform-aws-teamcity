@@ -5,7 +5,7 @@ data "aws_subnets" "private" {
   }
 
   tags = {
-    Type = "Public"
+    Type = "Private"
   }
 }
 
