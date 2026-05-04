@@ -6,7 +6,7 @@ resource "aws_instance" "teamcity" {
   ebs_optimized = true
 
   key_name               = aws_key_pair.teamcity.key_name
-  subnet_id              = element(var.private_subnets, 0)
+  subnet_id              = var.private_subnets[0]
   vpc_security_group_ids = [aws_security_group.teamcity.id]
   iam_instance_profile   = aws_iam_instance_profile.teamcity.name
 
