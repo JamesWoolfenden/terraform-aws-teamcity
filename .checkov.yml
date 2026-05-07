@@ -1,5 +1,5 @@
 ---
-branch: master
+branch: main
 download-external-modules: true
 evaluate-variables: true
 external-modules-download-path: .external_modules

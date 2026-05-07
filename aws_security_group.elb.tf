@@ -10,7 +10,6 @@ resource "aws_security_group" "elb" {
     to_port     = 80
     protocol    = "tcp"
     description = "http access"
-    # tfsec:ignore:AWS008
     cidr_blocks = var.elb-whitelist
   }
 
@@ -19,7 +18,6 @@ resource "aws_security_group" "elb" {
     to_port     = 443
     protocol    = "tcp"
     description = "SSL access"
-    # tfsec:ignore:AWS008
     cidr_blocks = var.elb-whitelist
   }
 
@@ -28,7 +26,6 @@ resource "aws_security_group" "elb" {
     to_port     = 0
     protocol    = "-1"
     description = "Allow outbound"
-    # tfsec:ignore:AWS009
     cidr_blocks = ["0.0.0.0/0"]
   }
 

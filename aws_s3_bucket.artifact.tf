@@ -1,4 +1,3 @@
-# tfsec:ignore:AWS002
 resource "aws_s3_bucket" "artifact" {
   # checkov:skip=CKV2_AWS_61: Lifecycle configuration not required for this bucket
   # checkov:skip=CKV2_AWS_62: Event notifications not required for this bucket

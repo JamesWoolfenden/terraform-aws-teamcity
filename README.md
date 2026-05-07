@@ -1,13 +1,11 @@
 # terraform-aws-teamcity
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-teamcity/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-teamcity)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-teamcity/workflows/Verify/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-teamcity)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-teamcity.svg)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-teamcity.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-teamcity/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-teamcity/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-teamcity&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-teamcity/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-teamcity&benchmark=INFRASTRUCTURE+SECURITY)
 
 This module is to create a Teamcity CICD server on EC2. Its is fully automatic it install Teamcity as part of the userdata payload.
 
@@ -145,7 +143,7 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 | <a name="provider_local"></a> [local](#provider\_local) | n/a |
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
@@ -158,7 +156,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_db_instance.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance) | resource |
 | [aws_db_subnet_group.teamcity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group) | resource |
 | [aws_elb.service_elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) | resource |
@@ -186,31 +184,31 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_allocated_storage"></a> [allocated\_storage](#input\_allocated\_storage) | n/a | `number` | `10` | no |
 | <a name="input_ami_id"></a> [ami\_id](#input\_ami\_id) | Which image to use | `string` | n/a | yes |
 | <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | n/a | `bool` | `false` | no |
 | <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | n/a | `number` | `14` | no |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common\_tags scheme | `map(any)` | n/a | yes |
-| <a name="input_elb-whitelist"></a> [elb-whitelist](#input\_elb-whitelist) | The allow list | `list(any)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| <a name="input_elb-whitelist"></a> [elb-whitelist](#input\_elb-whitelist) | The allow list | `list(any)` | <pre>[<br/>  "0.0.0.0/0"<br/>]</pre> | no |
 | <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | MySQl Version | `string` | `"5.7.11"` | no |
 | <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | Instance DB size | `string` | `"db.t2.small"` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | THe instance type | `string` | n/a | yes |
 | <a name="input_key_name"></a> [key\_name](#input\_key\_name) | description | `string` | n/a | yes |
 | <a name="input_kms_key"></a> [kms\_key](#input\_kms\_key) | n/a | `any` | n/a | yes |
-| <a name="input_listeners"></a> [listeners](#input\_listeners) | Details for SSL redirect | <pre>list(object({ instance_port = number,<br>    instance_protocol  = string,<br>    lb_port            = number,<br>    lb_protocol        = string,<br>    ssl_certificate_id = string<br>  }))</pre> | n/a | yes |
+| <a name="input_listeners"></a> [listeners](#input\_listeners) | Details for SSL redirect | <pre>list(object({ instance_port = number,<br/>    instance_protocol  = string,<br/>    lb_port            = number,<br/>    lb_protocol        = string,<br/>    ssl_certificate_id = string<br/>  }))</pre> | n/a | yes |
 | <a name="input_monitoring_interval"></a> [monitoring\_interval](#input\_monitoring\_interval) | The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance | `string` | `30` | no |
 | <a name="input_monitoring_role_arn"></a> [monitoring\_role\_arn](#input\_monitoring\_role\_arn) | n/a | `string` | `""` | no |
 | <a name="input_need_db"></a> [need\_db](#input\_need\_db) | Only create db when set | `number` | `0` | no |
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | n/a | `list(any)` | n/a | yes |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | n/a | `list(any)` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The id for the vpc | `string` | n/a | yes |
-| <a name="input_whitelist"></a> [whitelist](#input\_whitelist) | The CIDRs that can have access to the instance | `list(any)` | <pre>[<br>  "10.0.0.0/16"<br>]</pre> | no |
+| <a name="input_whitelist"></a> [whitelist](#input\_whitelist) | The CIDRs that can have access to the instance | `list(any)` | <pre>[<br/>  "10.0.0.0/16"<br/>]</pre> | no |
 
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_artifact-bucket"></a> [artifact-bucket](#output\_artifact-bucket) | n/a |
 | <a name="output_dbpassword"></a> [dbpassword](#output\_dbpassword) | n/a |
 | <a name="output_elb"></a> [elb](#output\_elb) | n/a |
